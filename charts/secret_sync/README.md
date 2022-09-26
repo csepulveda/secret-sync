@@ -1,4 +1,7 @@
 # Secret Sync
+This tool copy secrets from AWS SecretsManager to Kubernetes Secrets.
+Using this tools its not necesary to use Kubernetes Secrets Store CSI Driver if you only need send the entier secret from AWS to Kubernetes Secret.
+The secrets created has the label `created_by=secret-sync` if one of those secrets are removed from de secret-sync configuration, the secret will be removed.
 
 ## Parameters
 

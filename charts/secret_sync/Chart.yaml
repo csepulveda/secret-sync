@@ -1,6 +1,6 @@
 apiVersion: v2
 name: secret-sync
-description: A Helm chart to install secret-sync
+description: This tool copy secrets from AWS SecretsManager to Kubernetes Secrets
 home: https://github.com/csepulveda/secret-sync
 type: application
 version: 0.1.7
