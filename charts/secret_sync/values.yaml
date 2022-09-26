@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: csepulveda/secret-sync
+  repository: csepulvedab/secret-sync
   pullPolicy: IfNotPresent
   tag: ""
 
