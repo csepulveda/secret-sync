@@ -1,54 +1,107 @@
+## @section Common Parameters
+
+## @param replicaCount Number of secret-sync replicas
+##
 replicaCount: 1
 
+## @param image.repository The repository to use for the secret-sync image.
+## @param image.pullPolicy the pull policy to use for the secret-sync image
+## @param image.tag The secret-sync image tag. Defaults to the chart's AppVersion
+##
 image:
   repository: csepulvedab/secret-sync
   pullPolicy: IfNotPresent
   tag: ""
 
-imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
-
+## @param serviceAccount.annotations [object] Annotations for service account. Evaluated as a template. Only used if `create` is `true`.
+## @param serviceAccount.create Specifies whether a ServiceAccount should be created
+## @param serviceAccount.name Name of the service account to use. If not set and create is true, a name is generated using the fullname template.
+##
 serviceAccount:
   create: true
   annotations: {}
   name: "secret-sync"
 
+## @param role.annotations [object] Annotations for the tole. Evaluated as a template. Only used if `create` is `true`.
+## @param role.create Specifies whether a role should be created
+## @param role.name Name of the role to use. If not set and create is true, a name is generated using the fullname template.
+##
 role:
   create: true
   annotations: {}
   name: "secret-sync"
 
+## @param roleBinding.annotations [object] Annotations for role binding. Evaluated as a template. Only used if `create` is `true`.
+## @param roleBinding.create Specifies whether a roleBinding should be created
+## @param roleBinding.name Name of the role binding to use. If not set and create is true, a name is generated using the fullname template.
+##
 roleBinding:
   create: true
   annotations: {}
   name: "secret-sync"
 
+## @param podAnnotations [object] Add extra annotations to the secret-sync pod(s)
+##
 podAnnotations: {}
 
+## @param podSecurityContext [object] Add extra podSecurityContext to the secret-sync pod(s)
+##
 podSecurityContext: {}
 
+## @param securityContext [object] Add extra securityContext to the secret-sync pod(s)
+##
 securityContext: {}
 
-resources: {}
+## secret-sync resource requests and limits
+## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+## We usually recommend not to specify default resources and to leave this as a conscious
+## choice for the user. This also increases chances charts run on environments with little
+## resources, such as Minikube. If you do want to specify resources, uncomment the following
+## lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+## @param resources.limits [object] The resources limits for the secret-sync container
+## @param resources.requests [object] The requested resources for the secret-sync container
+##
+resources:
+  ## Example:
+  ## limits:
+  ##    cpu: 200m
+  ##    memory: 1Gi
+  limits: {}
+  ## Examples:
+  ## requests:
+  ##    memory: 256Mi
+  ##    cpu: 250m
+  requests: {}
 
+## @param env [object] Additional env vars for secret-sync pod(s).
+##
 env:
   "INTERVAL": "120"
 
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-
+## @param nodeSelector [object] Node labels for pod assignment
+## Ref: https://kubernetes.io/docs/user-guide/node-selection/
+##
 nodeSelector: {}
 
+## @param tolerations [array] Tolerations for secret-sync pod assignment.
+## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+##
 tolerations: []
 
+## @param affinity [object] Node labels for pod assignment
+## Ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity
+##
 affinity: {}
 
+
+## @section Secrets Definitions
+
+## Configure secrets to be synced
+## @param secrets [array] secret to be synced.
+##
 secrets: []
-  # - provider: aws
-  #   source: dev-new-example-secret
-  #   dest: dev-new-example-secret
-  #   namespace: default
+## example:
+## - provider: aws
+##   source: dev-new-example-secret
+##   dest: dev-new-example-secret
+##   namespace: default
