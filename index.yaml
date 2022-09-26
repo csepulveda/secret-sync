@@ -3,6 +3,24 @@ entries:
   secret-sync:
   - apiVersion: v2
     appVersion: "0.1"
+    created: "2022-09-26T15:39:37.377287568Z"
+    description: A Helm chart to install secret-sync
+    digest: b5ce26630be104c7c862b60d91155fe1a1f181027447cee04ebc59a4934d02c5
+    home: https://github.com/csepulveda/secret-sync
+    keywords:
+    - secrets
+    - secret-sync
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: csepulvedab
+      url: https://github.com/csepulveda/secret-sync
+    name: secret-sync
+    type: application
+    urls:
+    - https://github.com/csepulveda/secret-sync/releases/download/secret-sync-0.1.7/secret-sync-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: "0.1"
     created: "2022-09-26T13:38:04.413631698Z"
     description: A Helm chart for Kubernetes
     digest: 58c13c81df1e6354472e5c191c486196d47a93f9f215963a4fceb63f44804171
@@ -21,4 +39,4 @@ entries:
     urls:
     - https://github.com/csepulveda/secret-sync/releases/download/secret-sync-0.1.4/secret-sync-0.1.4.tgz
     version: 0.1.4
-generated: "2022-09-26T13:38:04.413651999Z"
+generated: "2022-09-26T15:39:37.377300668Z"
