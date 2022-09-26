@@ -7,8 +7,8 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/secretsmanager"
 	"github.com/aws/aws-sdk-go/service/secretsmanager/secretsmanageriface"
-	"github.com/csepulveda/secret_sync/config"
-	"github.com/csepulveda/secret_sync/sync/k8s"
+	"github.com/csepulveda/secret-sync/config"
+	"github.com/csepulveda/secret-sync/sync/k8s"
 )
 
 func SyncSecret(secret *config.Secret) (bool, error) {

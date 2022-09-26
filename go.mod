@@ -1,4 +1,4 @@
-module github.com/csepulveda/secret_sync
+module github.com/csepulveda/secret-sync
 
 go 1.19
 

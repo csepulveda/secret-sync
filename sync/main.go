@@ -3,8 +3,8 @@ package sync
 import (
 	"fmt"
 
-	"github.com/csepulveda/secret_sync/config"
-	"github.com/csepulveda/secret_sync/sync/aws"
+	"github.com/csepulveda/secret-sync/config"
+	"github.com/csepulveda/secret-sync/sync/aws"
 )
 
 func SyncSecret(secret *config.Secret) error {

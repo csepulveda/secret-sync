@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"log"
 
-	"github.com/csepulveda/secret_sync/config"
+	"github.com/csepulveda/secret-sync/config"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	corev1 "k8s.io/client-go/applyconfigurations/core/v1"
 	v1 "k8s.io/client-go/applyconfigurations/meta/v1"
@@ -34,7 +34,7 @@ func CreateSecret(namespace, secretname, secret string) {
 	}
 
 	labels := map[string]string{}
-	labels["created_by"] = "secret_sync"
+	labels["created_by"] = "secret-sync"
 
 	k8ssecret := &corev1.SecretApplyConfiguration{
 		TypeMetaApplyConfiguration: v1.TypeMetaApplyConfiguration{
@@ -49,7 +49,7 @@ func CreateSecret(namespace, secretname, secret string) {
 		StringData: secretData,
 	}
 	opts := metav1.ApplyOptions{
-		FieldManager: "secret_sync",
+		FieldManager: "secret-sync",
 	}
 	_, err = clientset.CoreV1().Secrets(namespace).Apply(context.TODO(), k8ssecret, opts)
 	if err != nil {
@@ -80,7 +80,7 @@ func DeleteSecrets(cfg *config.Config) {
 
 		namespace := cfg.Secrets[i].Namespace
 		opts := metav1.ListOptions{
-			LabelSelector: "created_by=secret_sync",
+			LabelSelector: "created_by=secret-sync",
 		}
 
 		secretList, err := clientset.CoreV1().Secrets(namespace).List(context.TODO(), opts)
