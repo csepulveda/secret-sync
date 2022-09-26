@@ -3,6 +3,24 @@ entries:
   secret-sync:
   - apiVersion: v2
     appVersion: "0.1"
+    created: "2022-09-26T16:11:36.525800324Z"
+    description: This tool copy secrets from AWS SecretsManager to Kubernetes Secrets
+    digest: ea9c702bed0aeed99394cfe42f94258fafbf489762a7cf24ad3498c655b931eb
+    home: https://github.com/csepulveda/secret-sync
+    keywords:
+    - secrets
+    - secret-sync
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: csepulvedab
+      url: https://github.com/csepulveda/secret-sync
+    name: secret-sync
+    type: application
+    urls:
+    - https://github.com/csepulveda/secret-sync/releases/download/secret-sync-0.1.8/secret-sync-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: "0.1"
     created: "2022-09-26T15:39:37.377287568Z"
     description: A Helm chart to install secret-sync
     digest: b5ce26630be104c7c862b60d91155fe1a1f181027447cee04ebc59a4934d02c5
@@ -39,4 +57,4 @@ entries:
     urls:
     - https://github.com/csepulveda/secret-sync/releases/download/secret-sync-0.1.4/secret-sync-0.1.4.tgz
     version: 0.1.4
-generated: "2022-09-26T15:39:37.377300668Z"
+generated: "2022-09-26T16:11:36.525818126Z"
