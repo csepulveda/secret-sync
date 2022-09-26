@@ -3,7 +3,7 @@ name: secret-sync
 description: This tool copy secrets from AWS SecretsManager to Kubernetes Secrets
 home: https://github.com/csepulveda/secret-sync
 type: application
-version: 0.1.7
+version: 0.1.8
 appVersion: "0.1"
 keywords:
   - secrets
