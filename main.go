@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/csepulveda/secret_sync/config"
-	"github.com/csepulveda/secret_sync/sync"
-	"github.com/csepulveda/secret_sync/sync/k8s"
+	"github.com/csepulveda/secret-sync/config"
+	"github.com/csepulveda/secret-sync/sync"
+	"github.com/csepulveda/secret-sync/sync/k8s"
 )
 
 func main() {

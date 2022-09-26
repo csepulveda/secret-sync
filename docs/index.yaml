@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  secret-sync:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-24T16:09:58.287309-03:00"
+    description: A Helm chart for Kubernetes
+    digest: 603497dcb5fb669a52b0490386cfefdbe56ee5f477dc39db59551abe2a59e882
+    name: secret-sync
+    type: application
+    urls:
+    - https://csepulveda.github.io/secret-sync/secret-sync-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-09-24T16:09:58.286282-03:00"
