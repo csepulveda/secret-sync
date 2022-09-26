@@ -37,10 +37,12 @@ jobs:
     steps:
       - name: Checkout Source
         uses: actions/checkout@v3
-      - name: Run Gosec Security Scanner
-        uses: securego/gosec@master
-        with:
-          args: ./...
+      - name: Setup Go
+        uses: actions/setup-go@v3
+      - name: Install dependencies
+        run: go get .
+      - name: Test with the Go CLI
+        run: go test -v ./...
   docker:
     runs-on: ubuntu-latest
     steps:
@@ -61,4 +63,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: csepulvedab/secret-sync:0.2
+          tags: csepulvedab/secret-sync:0.3
