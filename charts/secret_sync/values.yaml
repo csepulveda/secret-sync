@@ -46,3 +46,9 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+secrets: []
+  # - provider: aws
+  #   source: dev-new-example-secret
+  #   dest: dev-new-example-secret
+  #   namespace: default

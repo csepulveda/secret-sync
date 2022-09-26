@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "secret-sync.fullname" . }}
+  labels:
+    {{- include "secret-sync.labels" . | nindent 4 }}
+data:
+  config.json: |
+    {
+      {{- with .Values.secrets }}
+      "secrets":
+        {{- toPrettyJson . | nindent 8 }}
+      {{- end }}
+    }
