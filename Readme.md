@@ -15,7 +15,7 @@ cat ~/values.yaml
 env:
   "AWS_ACCESS_KEY_ID": "xxxxxxx"
   "AWS_SECRET_ACCESS_KEY": "xxxxxxx"
-  "AWS_DEFAULT_REGION": "us-west-2"
+  "AWS_REGION": "us-west-2"
 
 secrets:
   - provider: aws
