@@ -65,4 +65,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: csepulvedab/secret-sync:0.3
+          tags: csepulvedab/secret-sync:0.4
