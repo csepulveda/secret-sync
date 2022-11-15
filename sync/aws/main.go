@@ -44,9 +44,7 @@ func readSecret(secret string, svc secretsmanageriface.SecretsManagerAPI) (*secr
 }
 
 func createSession() (*session.Session, error) {
-	sess, err := session.NewSession(&aws.Config{
-		Region: aws.String("us-west-1"),
-	})
+	sess, err := session.NewSession()
 	if err != nil {
 		log.Printf("Unable create session, %v\n", err)
 		return nil, err
