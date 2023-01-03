@@ -49,6 +49,7 @@ func CreateSecret(namespace, secretname, secret string) {
 		StringData: secretData,
 	}
 	opts := metav1.ApplyOptions{
+		Force:        true,
 		FieldManager: "secret-sync",
 	}
 	_, err = clientset.CoreV1().Secrets(namespace).Apply(context.TODO(), k8ssecret, opts)
